@@ -1,0 +1,9 @@
+wav-to-mp3-converter/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   └── ffmpeg/
+│       └── ffmpeg-core.js
+│       └── ffmpeg-core.wasm
+└── .gitignore
