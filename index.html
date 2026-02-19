@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor WAV a MP3 - WhatsApp Audio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertidor WAV a MP3</h1>
+        <p>Convierte tus audios de WhatsApp (formato .wav) a MP3 de alta calidad</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="wavFile" accept=".wav" hidden>
+            <div class="upload-box">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                <p>Arrastra tu archivo WAV aquí o haz clic para seleccionar</p>
+                <button id="selectFile">Seleccionar Archivo</button>
+            </div>
+        </div>
+
+        <div class="settings">
+            <label>
+                Calidad MP3:
+                <select id="bitrate">
+                    <option value="128">128 kbps (tamaño pequeño)</option>
+                    <option value="192">192 kbps (calidad estándar)</option>
+                    <option value="256" selected>256 kbps (alta calidad)</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <p id="progressText">Convirtiendo...</p>
+        </div>
+
+        <div class="result" id="result" style="display: none;">
+            <div class="success">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <p>¡Conversión completada!</p>
+            </div>
+            <a id="downloadLink" class="download-btn" download>Descargar MP3</a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ffmpeg.js@0.0.10/ffmpeg.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
