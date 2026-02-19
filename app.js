@@ -1,5 +1,10 @@
 const { createFFmpeg, fetchFile } = FFmpeg;
-const ffmpeg = createFFmpeg({ log: true });
+
+// Configuramos el core explícitamente para evitar fallos de ruta en GitHub
+const ffmpeg = createFFmpeg({ 
+    log: true,
+    corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'
+});
 
 const uploader = document.getElementById('uploader');
 const convertBtn = document.getElementById('convertBtn');
